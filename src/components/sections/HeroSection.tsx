@@ -47,12 +47,12 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a href="#query-analyzer">
+          <Link to="/signin">
             <Button variant="hero" size="xl" className="group">
-              Try Query Analyzer
+              Query Analyser
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Button>
-          </a>
+          </Link>
           <Link to="/contact">
             <Button variant="heroOutline" size="xl">
               Contact Us
