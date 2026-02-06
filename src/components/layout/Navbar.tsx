@@ -8,7 +8,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'Query Analyzer', href: '#query-analyzer' },
     { label: 'Analytics', href: '#analytics' },
     { label: 'Features', href: '#features' },
   ];
