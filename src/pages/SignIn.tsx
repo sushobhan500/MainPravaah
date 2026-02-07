@@ -1,21 +1,17 @@
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { supabase } from '@/integrations/supabase/client';
+import { lovable } from '@/integrations/lovable';
 import { useToast } from '@/hooks/use-toast';
 import { Chrome } from 'lucide-react';
 import Scene3D from '@/components/three/Scene3D';
-
 const SignIn = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
   const handleGoogleSignIn = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: `${window.location.origin}/`,
-      },
+    const { error } = await lovable.auth.signInWithOAuth('google', {
+      redirect_uri: window.location.origin,
     });
 
     if (error) {
